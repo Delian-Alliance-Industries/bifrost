@@ -1,0 +1,25 @@
+Cargo.toml
+  d8c74b38362b3fc6 5
+src/main.rs
+  d8c74b38362b3fc6 1-43,45-113
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.1.8",
+  "base_commit_sha": "caed8231e49bd1149b6e7d1490c53f3b941092c1",
+  "prompts": {
+    "d8c74b38362b3fc6": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a550c303-39af-4b96-9652-f6703464094a",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Pavlos-Petros Tournaris <ptournaris@delian.ai>",
+      "messages": [],
+      "total_additions": 113,
+      "total_deletions": 1,
+      "accepted_lines": 113,
+      "overriden_lines": 0
+    }
+  }
+}
