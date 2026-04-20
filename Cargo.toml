@@ -10,6 +10,7 @@ documentation = "https://github.com/Delian-Alliance-Industries/bifrost"
 readme = "README.md"
 keywords = ["kubernetes", "kubectl", "kubeconfig", "kubectx", "cli"]
 categories = ["command-line-utilities"]
+publish = false
 authors = ["Delian Alliance Industries <platform@delian.ai>"]
 exclude = [
     ".claude/",

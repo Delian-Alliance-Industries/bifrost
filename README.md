@@ -25,13 +25,13 @@ Think `kubectx`, but with a nicer prompt and a single static binary.
 brew install Delian-Alliance-Industries/tap/bifrost
 ```
 
-### From crates.io
+### From source
 
 ```sh
-cargo install bifrost
+cargo install --git https://github.com/Delian-Alliance-Industries/bifrost.git
 ```
 
-### From source
+Or clone and build locally:
 
 ```sh
 git clone https://github.com/Delian-Alliance-Industries/bifrost.git
