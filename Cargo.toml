@@ -1,6 +1,6 @@
 [package]
 name = "bifrost"
-version = "1.0.1"
+version = "1.1.0"
 edition = "2024"
 description = "Cross the rainbow bridge between Kubernetes contexts"
 license = "MIT OR Apache-2.0"
@@ -21,7 +21,7 @@ exclude = [
 cliclack = "0.4.0"
 dirs = "6.0.0"
 serde = { version = "1.0.228", features = ["derive"] }
-serde_yaml = "0.9.34"
+serde_yaml_ng = "0.10.0"
 
 # The profile that 'dist' will build with
 [profile.dist]
