@@ -1,0 +1,51 @@
+.github/workflows/ci.yml
+  2e7500f88e2b3596 1-47
+LICENSE-APACHE
+  2e7500f88e2b3596 1-201
+LICENSE-MIT
+  2e7500f88e2b3596 1-21
+.github/PULL_REQUEST_TEMPLATE.md
+  2e7500f88e2b3596 1-21
+.github/ISSUE_TEMPLATE/bug_report.md
+  2e7500f88e2b3596 1-37
+dist-workspace.toml
+  2e7500f88e2b3596 1-13
+.github/ISSUE_TEMPLATE/config.yml
+  2e7500f88e2b3596 1
+.github/workflows/release.yml
+  2e7500f88e2b3596 1-296
+.github/ISSUE_TEMPLATE/feature_request.md
+  2e7500f88e2b3596 1-23
+Cargo.toml
+  2e7500f88e2b3596 1-29
+src/main.rs
+  2e7500f88e2b3596 1-114
+.gitignore
+  2e7500f88e2b3596 1-18
+README.md
+  2e7500f88e2b3596 1-84
+CODE_OF_CONDUCT.md
+  2e7500f88e2b3596 1-56
+CONTRIBUTING.md
+  2e7500f88e2b3596 1-48
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.0",
+  "base_commit_sha": "e089f9a54884507437484692099f86f05afebbeb",
+  "prompts": {
+    "2e7500f88e2b3596": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "7856cb36-5b3b-4b40-b197-9562d67daffa",
+        "model": "claude-opus-4-7"
+      },
+      "human_author": "Pavlos-Petros Tournaris",
+      "messages": [],
+      "total_additions": 1009,
+      "total_deletions": 0,
+      "accepted_lines": 1009,
+      "overriden_lines": 0
+    }
+  }
+}
