@@ -1,0 +1,29 @@
+[package]
+name = "bifrost"
+version = "0.1.0"
+edition = "2024"
+description = "Cross the rainbow bridge between Kubernetes contexts"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/Delian-Alliance-Industries/bifrost"
+homepage = "https://github.com/Delian-Alliance-Industries/bifrost"
+documentation = "https://github.com/Delian-Alliance-Industries/bifrost"
+readme = "README.md"
+keywords = ["kubernetes", "kubectl", "kubeconfig", "kubectx", "cli"]
+categories = ["command-line-utilities"]
+authors = ["Delian Alliance Industries <platform@delian.ai>"]
+exclude = [
+    ".claude/",
+    ".github/",
+    "target/",
+]
+
+[dependencies]
+cliclack = "0.4.0"
+dirs = "6.0.0"
+serde = { version = "1.0.228", features = ["derive"] }
+serde_yaml = "0.9.34"
+
+# The profile that 'dist' will build with
+[profile.dist]
+inherits = "release"
+lto = "thin"
