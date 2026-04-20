@@ -19,6 +19,12 @@ Think `kubectx`, but with a nicer prompt and a single static binary.
 
 ## Install
 
+### Homebrew (macOS and Linux)
+
+```sh
+brew install Delian-Alliance-Industries/tap/bifrost
+```
+
 ### From crates.io
 
 ```sh
