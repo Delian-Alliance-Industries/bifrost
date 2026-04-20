@@ -38,8 +38,10 @@ USAGE:
     bifrost [OPTIONS]
 
 OPTIONS:
-    -h, --help       Print this help and exit
-    -V, --version    Print version and exit
+    -k, --kubeconfig <PATH>  Path to kubeconfig file
+                             (overrides $KUBECONFIG and default)
+    -h, --help               Print this help and exit
+    -V, --version            Print version and exit
 
 ENV:
     KUBECONFIG       Path(s) to kubeconfig (first is used if colon-separated).
@@ -51,7 +53,7 @@ fn die(msg: impl std::fmt::Display) -> ! {
     process::exit(1);
 }
 
-fn kubeconfig_path() -> PathBuf {
+fn default_kubeconfig_path() -> PathBuf {
     if let Ok(path) = std::env::var("KUBECONFIG") {
         PathBuf::from(path.split(':').next().unwrap_or(&path))
     } else {
@@ -62,30 +64,39 @@ fn kubeconfig_path() -> PathBuf {
     }
 }
 
-fn parse_args() {
-    let Some(arg) = std::env::args().nth(1) else {
-        return;
-    };
-    match arg.as_str() {
-        "-h" | "--help" => {
-            print!("{HELP}");
-            process::exit(0);
-        }
-        "-V" | "--version" => {
-            println!("bifrost {VERSION}");
-            process::exit(0);
-        }
-        _ => {
-            eprintln!("unknown argument: {arg}\n\n{HELP}");
-            process::exit(2);
+fn parse_args() -> Option<PathBuf> {
+    let mut args = std::env::args().skip(1);
+    let mut kubeconfig: Option<PathBuf> = None;
+    while let Some(arg) = args.next() {
+        match arg.as_str() {
+            "-h" | "--help" => {
+                print!("{HELP}");
+                process::exit(0);
+            }
+            "-V" | "--version" => {
+                println!("bifrost {VERSION}");
+                process::exit(0);
+            }
+            "-k" | "--kubeconfig" => {
+                let value = args
+                    .next()
+                    .unwrap_or_else(|| die(format!("{arg} requires a path argument")));
+                kubeconfig = Some(PathBuf::from(value));
+            }
+            _ if arg.starts_with("--kubeconfig=") => {
+                kubeconfig = Some(PathBuf::from(&arg["--kubeconfig=".len()..]));
+            }
+            _ => {
+                eprintln!("unknown argument: {arg}\n\n{HELP}");
+                process::exit(2);
+            }
         }
     }
+    kubeconfig
 }
 
 fn main() {
-    parse_args();
-
-    let path = kubeconfig_path();
+    let path = parse_args().unwrap_or_else(default_kubeconfig_path);
     let content = fs::read_to_string(&path).unwrap_or_else(|e| {
         die(format!(
             "Failed to read kubeconfig at {}: {e}",
