@@ -1,0 +1,23 @@
+README.md
+  2e7500f88e2b3596 22-27
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.0",
+  "base_commit_sha": "0ecc180ad5789e5065f6f6c6af00eb566b8b53e9",
+  "prompts": {
+    "2e7500f88e2b3596": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "7856cb36-5b3b-4b40-b197-9562d67daffa",
+        "model": "claude-opus-4-7"
+      },
+      "human_author": "Pavlos-Petros Tournaris",
+      "messages": [],
+      "total_additions": 6,
+      "total_deletions": 0,
+      "accepted_lines": 6,
+      "overriden_lines": 0
+    }
+  }
+}
